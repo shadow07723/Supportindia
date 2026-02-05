@@ -15,7 +15,7 @@ const UpiInfo = () => {
             </h1>
             <p className="text-gray-600 text-lg mb-6">
               UPI एक डिजिटल पेमेंट सिस्टम है जिससे आप तुरंत बैंक से बैंक पैसे
-              ट्रांसफर कर सकते हैं।
+              ट्रांसफर कर सकते हैं
             </p>
 
             <h2 className="text-2xl font-semibold text-gray-800 mb-3">
