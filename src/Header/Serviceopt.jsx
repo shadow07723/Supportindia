@@ -240,6 +240,25 @@ const Serviceopt = () => {
     setOpenMenu(!openMenu);
   };
 
+  // ✅ Click anywhere outside dropdown closes it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dotRef.current &&
+        !dotRef.current.contains(event.target) &&
+        openMenu
+      ) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openMenu]);
+
   return (
     <div className="bg-black text-white w-full overflow-hidden">
       <div className="flex items-center bg-gray-900 p-2">
