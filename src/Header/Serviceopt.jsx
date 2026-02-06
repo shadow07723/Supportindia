@@ -19,6 +19,33 @@ const Serviceopt = () => {
         { label: "New Aadhaar", path: "/new-aadhaar" },
         { label: "Update Aadhaar", path: "/update-aadhaar" },
         { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
+        { label: "New Aadhaar", path: "/new-aadhaar" },
+        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        { label: "Aadhaar Status", path: "/status-aadhaar" },
       ],
       pan: [
         { label: "New PAN", path: "/new-pan" },
@@ -187,7 +214,6 @@ const Serviceopt = () => {
       { id: "careers", title: "Careers", link: "/careers" },
       { id: "terms", title: "Terms of Service", link: "/terms" },
       { id: "privacy", title: "Privacy Policy", link: "/privacy" },
-      { id: "service", title: "Service", link: "/service" },
     ],
     hi: [
       { id: "aadhaar", title: "आधार कार्ड", link: "/aadhar" },
@@ -205,14 +231,15 @@ const Serviceopt = () => {
       { id: "careers", title: "करियर", link: "/careers" },
       { id: "terms", title: "सेवा की शर्तें", link: "/terms" },
       { id: "privacy", title: "गोपनीयता नीति", link: "/privacy" },
-      { id: "service", title: "सेवा", link: "/service" },
     ],
   };
 
+  // Close dropdown on route change
   useEffect(() => {
     setOpenMenu(false);
   }, [location.pathname]);
 
+  // Open active service if passed in state
   useEffect(() => {
     if (location.state && "service" in location.state) {
       setActiveService(location.state.service);
@@ -220,6 +247,7 @@ const Serviceopt = () => {
     }
   }, [location.state]);
 
+  // Scroll to active card
   useEffect(() => {
     if (activeService) {
       const index = cards[lang].findIndex((c) => c.id === activeService);
@@ -240,7 +268,7 @@ const Serviceopt = () => {
     setOpenMenu(!openMenu);
   };
 
-  // ✅ Click anywhere outside dropdown closes it
+  // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -251,20 +279,18 @@ const Serviceopt = () => {
         setOpenMenu(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openMenu]);
 
+  
+
   return (
-    <div className="bg-black text-white w-full overflow-hidden">
-      <div className="flex items-center bg-gray-900 p-2">
+    <div className="bg-black text-white w-full h-10  relative">
+      <div className="flex items-center bg-gray-900 ">
         {activeService && activeService !== "home" && (
           <div ref={dotRef} className="flex-shrink-0">
-            <button onClick={toggleDropdown} className="p-1">
+            <button onClick={toggleDropdown} className="px-4">
               <VscThreeBars className="text-2xl" />
             </button>
           </div>
@@ -281,7 +307,7 @@ const Serviceopt = () => {
                 setOpenMenu(false);
               }}
               className={`flex-shrink-0 px-4 py-2 rounded cursor-pointer block ${
-                activeService === card.id ? "bg-blue-600" : "bg-gray-700"
+                activeService === card.id ? "bg-blue-600" : "bg-transparent"
               }`}
             >
               {card.title}
@@ -292,13 +318,11 @@ const Serviceopt = () => {
 
       {activeService && (
         <div
-          className={`absolute bg-gray-800 w-52 shadow-lg z-[9999]
-            transition-all duration-300
-            ${
-              openMenu
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-full pointer-events-none"
-            }`}
+          className={`fixed bg-gray-800 w-52 h-[100vh] overflow-y-auto scrollbar-hide shadow-lg z-[9999]"transition-all duration-300  ${
+            openMenu
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-full pointer-events-none"
+          }`}
           style={{ top: menuPos.top, left: menuPos.left }}
         >
           {serviceOptions[lang][activeService]?.map((item, i) => (

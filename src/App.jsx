@@ -22,11 +22,16 @@ function App() {
 
   return (
     <>
-      <Header
-        activeSearchBar={activeSearchBar}
-        setActiveSearchBar={setActiveSearchBar}
-      />
-      <Serviceopt />
+      {/* FIXED HEADER + SERVICEOPT */}
+      <div className="fixed top-0 left-0 w-full z-[9999]">
+        <Header
+          activeSearchBar={activeSearchBar}
+          setActiveSearchBar={setActiveSearchBar}
+        />
+        <Serviceopt />
+      </div>
+
+      <div className="mt-27">
       {showHomeComponents && (
         <Top
           activeSearchBar={activeSearchBar}
@@ -176,7 +181,8 @@ function App() {
           element={<div>Privacy Security Page</div>}
         />
         {/* inner options routes are anded here         */}
-      </Routes>
+        </Routes>
+        </div>
     </>
   );
 }
