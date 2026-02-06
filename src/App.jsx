@@ -12,6 +12,7 @@ import Contact from "./WebOption/Contact";
 import Services from "./WebOption/Services";
 import Privacy from "./WebOption/Privacy";
 import Terms from "./WebOption/terms";
+import BankAccountInfo from "./Servicepages/BankAcount";
 
 function App() {
   const location = useLocation();
@@ -37,7 +38,7 @@ function App() {
         <Route path="/" element={<HomeComponent />} />
         <Route path="/aadhar" element={<Aadhar />} />
         <Route path="/pan" element={<Pan />} />
-        <Route path="/account" element={<div>Account Page</div>} />
+        <Route path="/account" element={<BankAccountInfo />} />
         <Route path="/upi" element={<Upi />} />
         <Route path="/aayush" element={<div>Aayush Page</div>} />
         <Route path="/contact" element={<Contact />} />
