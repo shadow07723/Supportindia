@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { VscThreeBars } from "react-icons/vsc";
-import { LanguageContext } from "../LanguageContext"; // path check karein
+import { LanguageContext } from "../LanguageContext";
 
 const Serviceopt = () => {
   const location = useLocation();
-  const { lang } = useContext(LanguageContext); // 🔹 LANGUAGE CONTEXT
+  const { lang } = useContext(LanguageContext);
 
   const [activeService, setActiveService] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
@@ -13,7 +13,6 @@ const Serviceopt = () => {
   const dotRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // 🔹 SERVICE OPTIONS
   const serviceOptions = {
     en: {
       aadhaar: [
@@ -210,12 +209,10 @@ const Serviceopt = () => {
     ],
   };
 
-  // 🔹 URL change hone par dropdown band
   useEffect(() => {
     setOpenMenu(false);
   }, [location.pathname]);
 
-  // 🔹 FOOTER → SINGLEPAGE SYNC
   useEffect(() => {
     if (location.state && "service" in location.state) {
       setActiveService(location.state.service);
@@ -223,7 +220,6 @@ const Serviceopt = () => {
     }
   }, [location.state]);
 
-  // 🔹 Scroll selected card into view
   useEffect(() => {
     if (activeService) {
       const index = cards[lang].findIndex((c) => c.id === activeService);
@@ -257,19 +253,20 @@ const Serviceopt = () => {
 
         <div className="flex gap-3 ml-2 overflow-x-auto scrollbar-hide w-full">
           {cards[lang].map((card, i) => (
-            <div
+            <Link
               key={card.id}
+              to={card.link}
               ref={(el) => (cardRefs.current[i] = el)}
               onClick={() => {
                 setActiveService(card.id);
                 setOpenMenu(false);
               }}
-              className={`flex-shrink-0 px-4 py-2 rounded cursor-pointer ${
+              className={`flex-shrink-0 px-4 py-2 rounded cursor-pointer block ${
                 activeService === card.id ? "bg-blue-600" : "bg-gray-700"
               }`}
             >
-              <Link to={card.link}>{card.title}</Link>
-            </div>
+              {card.title}
+            </Link>
           ))}
         </div>
       </div>
