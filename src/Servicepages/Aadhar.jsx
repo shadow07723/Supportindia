@@ -8,22 +8,7 @@ import { GrServices } from "react-icons/gr";
 import Footer from "../Header/Footer.jsx";
 import { Link } from "react-router";
 
-const Card = ({ icon: Icon, title }) => (
-  <div className="bg-white p-4 rounded-lg shadow flex items-center gap-4">
-    <div className="flex-1">
-      <h3 className="font-semibold text-blue-900">{title}</h3>
 
-      <div className="mt-2 flex gap-2">
-        <button className="bg-blue-700 text-white px-4 py-1 rounded-md text-sm">
-          लिंक
-        </button>
-        <button className="border border-gray-300 px-4 py-1 rounded-md text-sm">
-          गाइड देखे
-        </button>
-      </div>
-    </div>
-  </div>
-);
 
 export default function AadhaarServices() {
   return (

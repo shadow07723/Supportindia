@@ -3,8 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { IoSearch } from "react-icons/io5";
 import SearchBar from "../SearchBar/SearchBar";
-
-// ✅ ADD
 import { LanguageContext } from "../LanguageContext.jsx";
 
 function Header({ activeSearchBar, setActiveSearchBar }) {
@@ -14,17 +12,14 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
   const [fullSearch, setFullSearch] = useState(false);
   const searchWrapperRef = useRef(null);
 
-  // ✅ SAFE CONTEXT
   const context = useContext(LanguageContext);
   const { lang, setLang, t } = context;
 
-  // PAGE CHANGE HOTE HI HEADER NORMAL
   useEffect(() => {
     setFullSearch(false);
     setActiveSearchBar(null);
   }, [location.pathname]);
 
-  // CLICK OUTSIDE TO CLOSE
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -45,7 +40,6 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
 
   return (
     <div className="w-full h-17 bg-[#0A2E5D] p-4 ">
-      {/* FULL SEARCH */}
       {fullSearch ? (
         <div ref={searchWrapperRef} className="flex items-center gap-3 w-full">
           <SearchBar
@@ -70,16 +64,17 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
           </button>
         </div>
       ) : (
-        /* NORMAL HEADER */
         <div className="flex justify-between items-center gap-3">
-          {/* LOGO */}
+          {/* ✅ LOGO click par home navigate + 3-line close */}
           <img
             src="/1000046237-removebg-preview.png"
             alt="logo"
             className="h-10 w-25 cursor-pointer"
-            onClick={() => navigate("/")}
+            onClick={
+              () => navigate("/", { state: { service: "home" } }) // 👈 yahan add kiya gaya
+            }
           />
-          {/* 🌐 LANGUAGE DROPDOWN */}
+
           <select
             value={lang}
             onChange={(e) => setLang(e.target.value)}
@@ -89,7 +84,6 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
             <option value="hi">हिन्दी</option>
           </select>
 
-          {/* SEARCH */}
           <button
             onClick={() => setFullSearch(true)}
             className="py-2 bg-white text-blue-500 rounded-full flex items-center gap-2 px-4"
@@ -98,7 +92,6 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
             <IoSearch />
           </button>
 
-          {/* SIGN IN */}
           <button className="text-white">{t.signIn}</button>
         </div>
       )}
