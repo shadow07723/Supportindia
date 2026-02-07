@@ -74,7 +74,7 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
         <div className="flex justify-between items-center gap-3">
           {/* LOGO */}
           <img
-            src="src/assets/1000046071-removebg-preview logo.png"
+            src="public/1000046237-removebg-preview.png"
             alt="logo"
             className="h-10 w-25 cursor-pointer"
             onClick={() => navigate("/")}
