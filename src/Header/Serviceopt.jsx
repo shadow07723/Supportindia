@@ -283,11 +283,9 @@ const Serviceopt = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openMenu]);
 
-  
-
   return (
-    <div className="bg-black text-white w-full h-10  relative">
-      <div className="flex items-center bg-gray-900 ">
+    <div className=" text-[#0A2E5D] w-full h-10  relative">
+      <div className="flex items-center bg-[#FFFFFF] ">
         {activeService && activeService !== "home" && (
           <div ref={dotRef} className="flex-shrink-0">
             <button onClick={toggleDropdown} className="px-4">
@@ -307,7 +305,7 @@ const Serviceopt = () => {
                 setOpenMenu(false);
               }}
               className={`flex-shrink-0 px-4 py-2 rounded cursor-pointer block ${
-                activeService === card.id ? "bg-blue-600" : "bg-transparent"
+                activeService === card.id ? "bg-[#DCEBFA]" : "bg-transparent"
               }`}
             >
               {card.title}
@@ -318,7 +316,7 @@ const Serviceopt = () => {
 
       {activeService && (
         <div
-          className={`fixed bg-gray-800 w-52 h-[100vh] overflow-y-auto scrollbar-hide shadow-lg z-[9999]"transition-all duration-300  ${
+          className={`fixed bg-[#FFFFFF] w-52 h-[100vh] overflow-y-auto scrollbar-hide shadow-lg z-[9999]"transition-all duration-300  ${
             openMenu
               ? "opacity-100 translate-x-0"
               : "opacity-0 -translate-x-full pointer-events-none"
@@ -330,7 +328,7 @@ const Serviceopt = () => {
               key={i}
               to={item.path}
               onClick={() => setOpenMenu(false)}
-              className="block px-4 py-2 text-sm hover:bg-blue-600"
+              className="block px-4 py-2 text-sm hover:bg-[#DCEBFA]"
             >
               {item.label}
             </Link>

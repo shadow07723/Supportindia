@@ -44,7 +44,7 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
   }, [fullSearch, setActiveSearchBar]);
 
   return (
-    <div className="w-full h-17 bg-gray-500 p-4 ">
+    <div className="w-full h-17 bg-[#0A2E5D] p-4 ">
       {/* FULL SEARCH */}
       {fullSearch ? (
         <div ref={searchWrapperRef} className="flex items-center gap-3 w-full">
@@ -74,16 +74,16 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
         <div className="flex justify-between items-center gap-3">
           {/* LOGO */}
           <img
-            src="/Tricolor_Ab_Ashok_Chakra_.png"
+            src="src/assets/1000046071-removebg-preview logo.png"
             alt="logo"
-            className="h-10 w-10 cursor-pointer"
+            className="h-10 w-25 cursor-pointer"
             onClick={() => navigate("/")}
           />
           {/* 🌐 LANGUAGE DROPDOWN */}
           <select
             value={lang}
             onChange={(e) => setLang(e.target.value)}
-            className="px-2 py-1 rounded"
+            className=" bg-[#0A2E5D] text-white "
           >
             <option value="en">English</option>
             <option value="hi">हिन्दी</option>

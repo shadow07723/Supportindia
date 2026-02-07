@@ -152,7 +152,7 @@ function SearchBar({
             ${
               search.trim()
                 ? "bg-yellow-600 hover:bg-yellow-700"
-                : "bg-gray-400 cursor-not-allowed"
+                : "bg-[#0A2E5D] cursor-not-allowed"
             }`}
         >
           <IoSearch className="scale-150" />

@@ -45,12 +45,14 @@ const Footer = () => {
   }[lang];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-12">
+    <footer className="bg-[#0B1F3A] text-[#FFFFFF] pt-12">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
           <h2 className="text-2xl font-bold text-white">{t.brandName}</h2>
-          <p className="mt-3 text-sm leading-relaxed">{t.brandDesc}</p>
+          <p className="mt-3 text-white text-sm leading-relaxed">
+            {t.brandDesc}
+          </p>
         </div>
 
         {/* Services */}
@@ -58,7 +60,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-4">
             {t.popularServices}
           </h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-[#BFD7FF]">
             <li>
               <Link to="/aadhar" state={{ service: "aadhaar" }}>
                 {t.aadhaar}
@@ -92,7 +94,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-4">
             {t.importantLinks}
           </h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-[#BFD7FF]">
             <li>
               <Link to="/about">{t.about}</Link>
             </li>
@@ -109,20 +111,23 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">{t.connect}</h3>
           <p className="text-sm mb-3">📍 {t.india}</p>
-          <a href="mailto:raySagar056@gmail.com" className="text-sm block mb-4">
+          <a
+            href="mailto:raySagar056@gmail.com"
+            className="text-sm block mb-4 text-[#BFD7FF]"
+          >
             📧 {t.email}
           </a>
 
           <div className="flex gap-4 text-xl">
-            <FaYoutube />
-            <FaFacebook />
-            <FaInstagram />
-            <FaWhatsapp />
+            <FaYoutube className="hover:text-red-700 hover:scale-150" />
+            <FaFacebook className="hover:text-blue-700 hover:scale-150" />
+            <FaInstagram className="hover:text-red-500 hover:scale-150" />
+            <FaWhatsapp className="hover:text-green-400 hover:scale-150" />
           </div>
         </div>
       </div>
 
-      <div className="border-t border-gray-700 mt-10 py-4 text-center text-sm text-gray-400">
+      <div className="border-t border-gray-700 mt-10 py-4 text-center text-sm text-[#CCCCCC]">
         © {new Date().getFullYear()} {t.footerBottom}
       </div>
     </footer>
