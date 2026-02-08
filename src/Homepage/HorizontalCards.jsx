@@ -10,25 +10,25 @@ const HorizontalScrollCards = () => {
       {
         id: 1,
         title: "Service One",
-        image: "/images/img1.jpg",
+        image: "1000046237-removebg-preview.png",
         link: "/service-one",
       },
       {
         id: 2,
         title: "Service Two",
-        image: "/images/img2.jpg",
+        image: "Homeposter1.png",
         link: "/service-two",
       },
       {
         id: 3,
-        title: "Service Three",
-        image: "/images/img3.jpg",
+        title: "ServiceThree",
+        image: "1000046237-removebg-preview.png",
         link: "/service-three",
       },
       {
         id: 4,
         title: "Service Four",
-        image: "/images/img4.jpg",
+        image: "Homeposter1.png",
         link: "/service-four",
       },
       {
@@ -45,7 +45,7 @@ const HorizontalScrollCards = () => {
       },
       {
         id: 7,
-        title: "Service Three",
+        title: "ServiceThree",
         image: "/images/img3.jpg",
         link: "/service-three",
       },
@@ -69,7 +69,7 @@ const HorizontalScrollCards = () => {
       },
       {
         id: 11,
-        title: "Service Three",
+        title: "ServiceThree",
         image: "/images/img3.jpg",
         link: "/service-three",
       },
@@ -157,20 +157,20 @@ const HorizontalScrollCards = () => {
   };
 
   return (
-    <div className="w-full px-4 py-6 bg-gray-50">
-      <h2>{lang === "en" ? "Book" : "बुक"}</h2>
+    <div className="w-full  px-4 pb-6 bg-gray-50">
+      <h2>{lang === "en" ? "Book>>" : "बुक"}</h2>
       <div className="flex gap-4 overflow-x-auto scrollbar-hide">
         {cards[lang].map((card, index) => (
           <Link
             key={card.id}
             to={card.link}
-            className="min-w-[240px] bg-white rounded-xl shadow-md"
+            className="min-w-[100px] xl:min-w-[240px] bg-white rounded-xl shadow-md"
           >
-            <div className="w-full h-40 overflow-hidden rounded-t-xl">
+            <div className="w-full h-20 xl:h-40 overflow-hidden rounded-t-xl">
               <img
                 src={card.image}
                 alt={card.title}
-                className={`w-full h-full object-cover ${
+                className={`w-full h-full object-fill ${
                   index === 0
                     ? "object-top"
                     : index === 1
@@ -182,7 +182,7 @@ const HorizontalScrollCards = () => {
               />
             </div>
 
-            <div className="p-3 text-center font-medium">{card.title}</div>
+            <div className="p-3 text-center text-sm h-10">{card.title}</div>
           </Link>
         ))}
       </div>

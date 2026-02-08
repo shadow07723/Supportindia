@@ -8,6 +8,7 @@ function HomeComponent() {
     <div>
       <HorizontalCards />
       <Cards />
+      <Cards />
       <Footer />
     </div>
   );
