@@ -39,7 +39,7 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
   }, [fullSearch, setActiveSearchBar]);
 
   return (
-    <div className="w-full h-12 bg-[#0A2E5D] p-2 md:h-17 md:p-4  ">
+    <div className="w-full h-12 bg-[#0A2E5D] p-1  md:h-17 md:p-4  ">
       {fullSearch ? (
         <div ref={searchWrapperRef} className="flex items-center gap-3 w-full">
           <SearchBar
