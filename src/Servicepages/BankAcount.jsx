@@ -74,7 +74,7 @@ function BankAcount() {
         <div>
           {lang === "en" ? (
             <>
-              <h1 className="text-2xl font-semibold mb-4">PAN Card Services</h1>
+              <h1 className="text-2xl font-semibold mb-4">PANa Card Services</h1>
               <p className="text-gray-600 mb-6">
                 Apply for new PAN, correct PAN details and track PAN status.
               </p>
