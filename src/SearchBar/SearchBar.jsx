@@ -142,7 +142,7 @@ function SearchBar({
           }}
           onFocus={() => setActiveSearchBar(id)}
           onKeyDown={handleKeyDown}
-          className={`border border-gray-300 border-r-0 rounded-tl-full rounded-bl-full p-2 w-full focus:outline-none ${inputClass}`}
+          className={`border border-gray-300  border-r-0 rounded-tl-full rounded-bl-full p-2 w-full focus:outline-none ${inputClass}`}
         />
 
         <button

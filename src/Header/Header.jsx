@@ -41,13 +41,13 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
   return (
     <div className="w-full h-12 bg-[#0A2E5D] p-1  md:h-17 md:p-4  ">
       {fullSearch ? (
-        <div ref={searchWrapperRef} className="flex items-center gap-3 w-full">
+        <div ref={searchWrapperRef} className="flex items-center  gap-3 w-full">
           <SearchBar
             id="header"
             wrapperClass="w-full"
             inputClass="h-10 rounded-md bg-white px-4"
-            dropdownClass="absolute top-14 left-0 right-0 bg-white border rounded-md z-50"
-            itemClass="p-3 hover:bg-gray-100 cursor-pointer"
+            dropdownClass="absolute top-14 left-0 right-0  border rounded-md z-50"
+            itemClass="p-3 hover:bg-gray-100  cursor-pointer"
             placeholder={t.placeholder}
             activeSearchBar={activeSearchBar}
             setActiveSearchBar={setActiveSearchBar}
@@ -86,10 +86,10 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
 
           <button
             onClick={() => setFullSearch(true)}
-            className="py-2 bg-white text-blue-500 rounded-full flex items-center gap-2 px-4"
+            className="py-2 bg-[#0A2E5D] md:bg-white text-blue-500 rounded-full flex items-center gap-2 px-4"
           >
-            <span className="hidden md:block">{t.search}</span>
-            <IoSearch />
+            <span className="hidden  md:block">{t.search}</span>
+            <IoSearch className="text-white md:text-blue-500" />
           </button>
 
           <button className="text-white">{t.signIn}</button>
