@@ -119,10 +119,19 @@ const Footer = () => {
           </a>
 
           <div className="flex gap-4 text-xl">
-            <FaYoutube className="hover:text-red-700 hover:scale-150" />
-            <FaFacebook className="hover:text-blue-700 hover:scale-150" />
-            <FaInstagram className="hover:text-red-500 hover:scale-150" />
-            <FaWhatsapp className="hover:text-green-400 hover:scale-150" />
+            <a href="https://youtube.com/@sagarrayyt1906?si=_KS9xeIwHGE_YA7H">
+              <FaYoutube className="hover:text-red-700 hover:scale-150" />
+            </a>
+            <a href="https://www.facebook.com/share/r/16zFQHR8T8/">
+              <FaFacebook className="hover:text-blue-700 hover:scale-150" />
+            </a>
+            <a href="c:\Users\sagar\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\3B090CDC0A74497D4982CB129076281C30B74EA3\transfers\2026-06\WhatsApp Image 2026-02-08 at 8.21.08 PM.jpeg">
+              <FaInstagram className="hover:text-red-500 hover:scale-150" />
+            </a>
+
+            <a href="https://chat.whatsapp.com/Dt1azNtV7Ih0JR474UaflA">
+              <FaWhatsapp className="hover:text-green-400 hover:scale-150" />
+            </a>
           </div>
         </div>
       </div>

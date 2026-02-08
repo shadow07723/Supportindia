@@ -3,22 +3,22 @@ import { useNavigate } from "react-router-dom";
 
 const images = [
   {
-    src: "public/1000046237-removebg-preview.png",
+    src: "1000046237-removebg-preview.png",
     link: "/page1",
     className: "md:h-84 h-50 w-full rounded-2xl object-cover ",
   },
   {
-    src: "public/Homeposter1.png",
+    src: "Homeposter1.png",
     link: "/page2",
     className: "md:h-84 h-50 w-full rounded-2xl",
   },
   {
-    src: "public/1000046237-removebg-preview.png",
+    src: "1000046237-removebg-preview.png",
     link: "/page3",
     className: "md:h-84 h-50 w-full rounded-2xl",
   },
   {
-    src: "public/Homeposter1.png",
+    src: "Homeposter1.png",
     link: "/page2",
     className: "md:h-84 h-50 w-full rounded-2xl",
   },
