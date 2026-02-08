@@ -9,10 +9,20 @@ const Cards = () => {
     { id: 4, image: "Homeposter1.png", path: "/account", service: "account" },
     { id: 5, image: "Homeposter1.png", path: "/aayush", service: "aayush" },
     { id: 6, image: "Homeposter1.png", path: "/privacy", service: "privacy" },
+    { id: 7, image: "Homeposter1.png", path: "/upi", service: "upi" },
+    { id: 8, image: "Homeposter1.png", path: "/pan", service: "pan" },
+    { id: 9, image: "Homeposter1.png", path: "/aadhaar", service: "aadhaar" },
+    { id: 10, image: "Homeposter1.png", path: "/account", service: "account" },
+    { id: 11, image: "Homeposter1.png", path: "/aayush", service: "aayush" },
+    { id: 12, image: "Homeposter1.png", path: "/privacy", service: "privacy" },
+    { id: 13, image: "Homeposter1.png", path: "/aadhaar", service: "aadhaar" },
+    { id: 14, image: "Homeposter1.png", path: "/account", service: "account" },
+    { id: 15, image: "Homeposter1.png", path: "/aayush", service: "aayush" },
+    { id: 16, image: "Homeposter1.png", path: "/privacy", service: "privacy" },
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 ">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 p-6  ">
       {cardData.map((card) => (
         <Link
           key={card.id}

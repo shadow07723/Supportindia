@@ -32,7 +32,6 @@ function App() {
         />
         <Serviceopt />
       </div>
-
       <div className="mt-27">
         {showHomeComponents && (
           <Top

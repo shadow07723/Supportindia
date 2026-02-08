@@ -45,7 +45,7 @@ const Footer = () => {
   }[lang];
 
   return (
-    <footer className="bg-[#0B1F3A] text-[#FFFFFF] pt-12">
+    <footer className="bg-[#0B1F3A] text-[#FFFFFF] pt-12 text-center">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div>

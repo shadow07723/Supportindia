@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Crucial from "./Crucial";
 import SearchBar from "../SearchBar/SearchBar";
 import { LanguageContext } from "../LanguageContext.jsx";
 
@@ -16,7 +17,7 @@ function Top({ activeSearchBar, setActiveSearchBar }) {
 
   return (
     <div>
-      <img src="Homeposter1.png" alt="" className="h-150 w-full" />
+      <Crucial />
       <div className="h-30 w-full bg-transparent flex justify-center items-center">
         <SearchBar
           id="top1"
