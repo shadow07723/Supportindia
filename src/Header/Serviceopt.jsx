@@ -306,11 +306,11 @@ const Serviceopt = () => {
   }, [openMenu]);
 
   return (
-    <div className=" text-[#0A2E5D] w-full   relative">
+    <div className=" text-[#0A2E5D] w-full h-10  relative">
       <div className="flex items-center bg-[#FFFFFF] ">
         {activeService && activeService !== "home" && (
           <div ref={dotRef} className="flex-shrink-0 xl:hidden">
-            <button onClick={toggleDropdown} className="px:2 md:px-4">
+            <button onClick={toggleDropdown} className="px-4">
               <VscThreeBars className="text-2xl" />
             </button>
           </div>
@@ -326,7 +326,7 @@ const Serviceopt = () => {
                 setActiveService(card.id);
                 setOpenMenu(false);
               }}
-              className={`flex-shrink-0 md:px-4 md:py-2 rounded cursor-pointer block ${
+              className={`flex-shrink-0 px-2 py-1 md:px-4 md:py-2 rounded cursor-pointer block ${
                 activeService === card.id ? "bg-[#DCEBFA]" : "bg-transparent"
               }`}
             >

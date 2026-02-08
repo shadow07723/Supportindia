@@ -45,7 +45,7 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
           <SearchBar
             id="header"
             wrapperClass="w-full"
-            inputClass="h-12 rounded-md bg-white px-4"
+            inputClass="h-10 rounded-md bg-white px-4"
             dropdownClass="absolute top-14 left-0 right-0 bg-white border rounded-md z-50"
             itemClass="p-3 hover:bg-gray-100 cursor-pointer"
             placeholder={t.placeholder}
