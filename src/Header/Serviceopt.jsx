@@ -309,7 +309,7 @@ const Serviceopt = () => {
     <div className=" text-[#0A2E5D] w-full h-10  relative">
       <div className="flex items-center bg-[#FFFFFF] ">
         {activeService && activeService !== "home" && (
-          <div ref={dotRef} className="flex-shrink-0 md:hidden">
+          <div ref={dotRef} className="flex-shrink-0 xl:hidden">
             <button onClick={toggleDropdown} className="px-4">
               <VscThreeBars className="text-2xl" />
             </button>

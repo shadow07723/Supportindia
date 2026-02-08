@@ -49,9 +49,9 @@ function Pan() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] h-screen overflow-hidden">
+    <div className="grid grid-cols-1 xl:grid-cols-[220px_1fr] h-screen overflow-hidden">
       {/* LEFT SIDEBAR */}
-      <aside className="hidden lg:block bg-gray-100 h-screen shadow-md overflow-y-auto scrollbar-hide">
+      <aside className="hidden xl:block bg-gray-100 h-screen shadow-md overflow-y-auto scrollbar-hide">
         <div >
           <h2 className="text-lg font-semibold mb-4 text-gray-700">
             {lang === "en" ? "PAN Services" : "पैन सेवाएं"}
