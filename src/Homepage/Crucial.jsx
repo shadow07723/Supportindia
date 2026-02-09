@@ -61,7 +61,7 @@ function Carousel() {
   };
 
   return (
-    <div className="pt-7">
+    <div className="pt-3">
       <div className="relative w-[90vw]   border-4 border-white rounded-2xl  mx-auto">
         {/* Image */}
         <img
