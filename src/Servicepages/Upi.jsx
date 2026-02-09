@@ -1,85 +1,117 @@
-import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { LanguageContext } from "../LanguageContext";
-import Footer from "../Header/Footer";
+import { useState } from "react";
 
-function Upi() {
-  const { lang } = useContext(LanguageContext);
-  const location = useLocation();
+export default function Mp4ToMp3() {
+  const [file, setFile] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const [download, setDownload] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const linkClass = (path) =>
-    `block px-3 py-2 rounded-md text-sm font-medium transition ${
-      location.pathname === path
-        ? "bg-blue-600 text-white"
-        : "text-gray-700 hover:bg-blue-100"
-    }`;
+  const convert = async () => {
+    if (!file) {
+      alert("Please select MP4 file");
+      return;
+    }
 
-  const panLinks = {
-    en: [
-      { label: "Create UPI ID", path: "/create-upi-id" },
-      { label: "Link Bank Account", path: "/link-bank-account" },
-      { label: "UPI Status", path: "/upi-status" },
-    ],
-    hi: [
-      { label: "यूपीआई आईडी बनाएं", path: "/create-upi-id" },
-      { label: "बैंक खाता लिंक करें", path: "/link-bank-account" },
-      { label: "यूपीआई स्थिति", path: "/upi-status" },
-    ],
+    setLoading(true);
+    setProgress(0);
+
+    const formData = new FormData();
+    formData.append("video", file);
+
+    const res = await fetch("http://localhost:5000/convert", {
+      method: "POST",
+      body: formData,
+    });
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      const text = decoder.decode(value);
+      text.split("\n\n").forEach((line) => {
+        if (line.startsWith("data:")) {
+          const data = JSON.parse(line.replace("data: ", ""));
+          if (data.progress) setProgress(data.progress);
+          if (data.done) {
+            setDownload(`http://localhost:5000/download?file=${data.file}`);
+            setLoading(false);
+          }
+        }
+      });
+    }
   };
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-[220px_1fr] h-screen overflow-hidden">
-      {/* LEFT SIDEBAR */}
-      <aside className="hidden xl:block bg-gray-100 h-screen shadow-md overflow-y-auto scrollbar-hide">
-        <div>
-          <h2 className="text-lg font-semibold mb-4 text-gray-700">
-            {lang === "en" ? "PAN Services" : "पैन सेवाएं"}
-          </h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-700 px-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6">
+        <h2 className="text-2xl font-bold text-center text-gray-800">
+          MP4 → MP3 Converter
+        </h2>
 
-          <ul className="space-y-2">
-            {panLinks[lang].map((item, index) => (
-              <li key={index}>
-                <Link to={item.path} className={linkClass(item.path)}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </aside>
+        <p className="text-center text-gray-500 text-sm mt-1">
+          Fast • Secure • Server-Side
+        </p>
 
-      {/* RIGHT CONTENT */}
-      <main className="bg-white h-screen  text-center overflow-y-auto scrollbar-hide">
-        <div>
-          {lang === "en" ? (
-            <>
-              <h1 className="text-2xl font-semibold mb-4">PAN Card Services</h1>
-              <p className="text-gray-600 mb-6">
-                Apply for new PAN, correct PAN details and track PAN status.
-              </p>
-            </>
-          ) : (
-            <>
-              <h1 className="text-2xl font-semibold mb-4">पैन कार्ड सेवाएं</h1>
-              <p className="text-gray-600 mb-6">
-                नया पैन आवेदन, पैन सुधार और स्थिति जांच।
-              </p>
-            </>
-          )}
+        {/* File Input */}
+        <label className="mt-6 block">
+          <span className="sr-only">Choose MP4</span>
+          <input
+            type="file"
+            accept="video/mp4"
+            onChange={(e) => setFile(e.target.files[0])}
+            className="block w-full text-sm text-gray-600
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-lg file:border-0
+              file:text-sm file:font-semibold
+              file:bg-indigo-100 file:text-indigo-700
+              hover:file:bg-indigo-200 cursor-pointer"
+          />
+        </label>
 
-          {[...Array(25)].map((_, i) => (
-            <p key={i} className="text-gray-600 mb-2">
-              {lang === "en"
-                ? `Sample content line ${i + 1}`
-                : `उदाहरण कंटेंट लाइन ${i + 1}`}
-            </p>
-          ))}
+        {/* Convert Button */}
+        <button
+          onClick={convert}
+          disabled={loading}
+          className={`w-full mt-6 py-3 rounded-xl text-white font-semibold transition
+            ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-indigo-600 hover:bg-indigo-700"
+            }`}
+        >
+          {loading ? "Converting..." : "Convert to MP3"}
+        </button>
 
-          <Footer />
-        </div>
-      </main>
+        {/* Progress */}
+        {loading && (
+          <div className="mt-5">
+            <div className="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Processing</span>
+              <span>{progress}%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+              <div
+                className="bg-indigo-600 h-2 transition-all duration-300"
+                style={{ width: `${progress}%` }}
+              ></div>
+            </div>
+          </div>
+        )}
+
+        {/* Download */}
+        {download && (
+          <a
+            href={download}
+            className="block text-center mt-6 py-3 rounded-xl
+              bg-green-600 hover:bg-green-700 text-white font-semibold"
+          >
+            Download MP3
+          </a>
+        )}
+      </div>
     </div>
   );
 }
-
-export default Upi;

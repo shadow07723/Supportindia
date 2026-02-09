@@ -1,6 +1,5 @@
 {
   "name": "supportindia",
-  
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
     "@tailwindcss/vite": "^4.1.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
