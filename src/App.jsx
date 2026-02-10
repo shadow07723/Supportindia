@@ -14,6 +14,8 @@ import Privacy from "./WebOption/Privacy";
 import Terms from "./WebOption/terms";
 import BankAccountInfo from "./Servicepages/BankAcount";
 import OpenAcount from "./Acount/OpenAcount";
+import About from "./WebOption/About";
+import Support from "./WebOption/Support";
 // 👈 import new desktop service options component
 
 function App() {
@@ -48,9 +50,9 @@ function App() {
           <Route path="/upi" element={<Upi />} />
           <Route path="/aayush" element={<div>About Page</div>} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<div>About Page</div>} />
+          <Route path="/about" element={<About />} />
           <Route path="/services" element={<div>Services Page</div>} />
-          <Route path="/support" element={<div>Support Page</div>} />
+          <Route path="/support" element={<Support />} />
           <Route path="/faq" element={<div>FAQ Page</div>} />
           <Route path="/blog" element={<div>Blog Page</div>} />
           <Route path="/careers" element={<div>Careers Page</div>} />

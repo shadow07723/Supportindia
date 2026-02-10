@@ -27,7 +27,7 @@ const HorizontalScrollCards = () => {
       },
       {
         id: 4,
-        title: "Service Four",
+        title: "ServiceFour",
         image: "Homeposter1.png",
         link: "/service-four",
       },
@@ -51,7 +51,7 @@ const HorizontalScrollCards = () => {
       },
       {
         id: 8,
-        title: "Service Four",
+        title: "ServiceFour",
         image: "/images/img4.jpg",
         link: "/service-four",
       },
@@ -75,7 +75,7 @@ const HorizontalScrollCards = () => {
       },
       {
         id: 12,
-        title: "Service Four",
+        title: "ServiceFour",
         image: "/images/img4.jpg",
         link: "/service-four",
       },
@@ -157,14 +157,14 @@ const HorizontalScrollCards = () => {
   };
 
   return (
-    <div className="w-full  px-4 pb-6 bg-gray-50">
+    <div className="w-full  px-4 pb-6 bg-gray-100">
       <h2>{lang === "en" ? "Book>>" : "बुक"}</h2>
-      <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+      <div className="flex gap-4 overflow-x-auto  scrollbar-hide">
         {cards[lang].map((card, index) => (
           <Link
             key={card.id}
             to={card.link}
-            className="min-w-[100px] xl:min-w-[240px] bg-white rounded-xl shadow-md"
+            className="min-w-[100px] xl:min-w-[240px]  rounded-xl "
           >
             <div className="w-full h-20 xl:h-40 overflow-hidden rounded-t-xl">
               <img

@@ -1,83 +1,74 @@
-function Contact() {
+// File: src/components/PredefinedFIR.jsx
+import React from "react";
+import Footer from "../Header/Footer";
+const PredefinedFIR = () => {
+  // तुम्हारे contact details और complaint content यहाँ डालो
+  const contactDetails = {
+    name: "sagar ray",
+    mobile: "+91 7723977481",
+    email: "raysagar077@gmail.com",
+    address: "satna , (m.p.)",
+  };
+
+  const complaintText = `यह शिकायत इस बात के लिए है कि वेबसाइट पर कुछ जानकारी update नहीं हो रही है। 
+हमने कई बार request किया है, लेकिन कोई response नहीं मिला। 
+कृपया तुरंत action लें।`;
+
+  const descriptionText = `⚠️ ध्यान दें: यह वेबसाइट किसी सरकारी संस्था द्वारा नहीं चलाई जा रही है। 
+यह केवल guidance और services प्रदान करने के लिए है।`;
+
   return (
-    <section className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow">
-      <h1 className="text-2xl md:text-3xl font-bold mb-2 text-center">
-        Contact Us / संपर्क करें
-      </h1>
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="max-w-3xl mx-auto bg-white shadow-md rounded-xl p-8">
+        <h1 className="text-3xl font-bold text-center text-indigo-600 mb-4">
+          FIR / Complaint
+        </h1>
 
-      <p className="text-center text-sm text-gray-600 dark:text-gray-300 mb-8">
-        किसी भी सरकारी सेवा से जुड़ी जानकारी के लिए हमसे संपर्क करें
-      </p>
+        {/* Extra Description */}
+        <p className="text-sm text-red-600 mb-6 whitespace-pre-line">
+          {descriptionText}
+        </p>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Contact Info */}
-        <div className="space-y-4">
-          <h2 className="text-lg font-semibold">Contact Details</h2>
-
-          <p className="text-sm">
-            📞 Phone:
-            <a href="tel:7723977481" className="text-blue-600 underline ml-2">
-              7723977481
-            </a>
+        {/* Contact Details */}
+        <div className="space-y-2 mb-6">
+          <p>
+            <span className="font-semibold">Name:</span> {contactDetails.name}
           </p>
-
-          <p className="text-sm">
-            📧 Email:
+          <p>
+            <span className="font-semibold">Mobile:</span>{" "}
             <a
-              href="mailto:raysagar056@gmail.com"
-              className="text-blue-600 underline ml-2"
+              href={`tel:${contactDetails.mobile}`}
+              className="text-indigo-600 hover:underline"
             >
-              raysagar056@gmail.com
+              {contactDetails.mobile}
             </a>
           </p>
-
-          <p className="text-sm">📍 Address: Satna, Madhya Pradesh, India</p>
-
-          <div className="mt-4 text-xs text-gray-500">
-            ⚠️ Disclaimer: We are not a government website. We only provide
-            guidance for government services.
-          </div>
+          <p>
+            <span className="font-semibold">Email:</span>{" "}
+            <a
+              href={`mailto:${contactDetails.email}`}
+              className="text-indigo-600 hover:underline"
+            >
+              {contactDetails.email}
+            </a>
+          </p>
+          <p>
+            <span className="font-semibold">Address:</span>{" "}
+            {contactDetails.address}
+          </p>
         </div>
 
-        {/* Contact Form */}
-        <form className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium">Name / नाम</label>
-            <input
-              type="text"
-              required
-              className="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium">
-              Phone Number / मोबाइल
-            </label>
-            <input
-              type="tel"
-              required
-              className="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium">Message / संदेश</label>
-            <textarea
-              rows="4"
-              className="w-full mt-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
-          >
-            Send Message
-          </button>
-        </form>
+        {/* Complaint Details */}
+        <div className="bg-gray-50 border border-gray-300 rounded-lg p-4">
+          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+            Complaint Details:
+          </h2>
+          <p className="text-gray-700 whitespace-pre-line">{complaintText}</p>
+        </div>
       </div>
-    </section>
+      <Footer />
+    </div>
   );
-}
-export default Contact;
+};
+
+export default PredefinedFIR;

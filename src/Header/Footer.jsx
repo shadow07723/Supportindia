@@ -76,11 +76,11 @@ const Footer = () => {
                 {t.upi}
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/blog" state={{ service: "blog" }}>
                 {t.blog}
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/terms" state={{ service: "terms" }}>
                 {t.terms}
@@ -125,7 +125,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/share/r/16zFQHR8T8/">
               <FaFacebook className="hover:text-blue-700 hover:scale-150" />
             </a>
-            <a href="c:\Users\sagar\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\3B090CDC0A74497D4982CB129076281C30B74EA3\transfers\2026-06\WhatsApp Image 2026-02-08 at 8.21.08 PM.jpeg">
+            <a href="https://www.instagram.com/sagar_roy_012?igsh=cmtqa241aDQ5NzJ6">
               <FaInstagram className="hover:text-red-500 hover:scale-150" />
             </a>
 
