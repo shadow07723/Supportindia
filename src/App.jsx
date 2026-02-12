@@ -16,6 +16,8 @@ import BankAccountInfo from "./Servicepages/BankAcount";
 import OpenAcount from "./Acount/OpenAcount";
 import About from "./WebOption/About";
 import Support from "./WebOption/Support";
+import Login from "./Login/Login";
+import Register from "./Login/Register";
 // 👈 import new desktop service options component
 
 function App() {
@@ -48,12 +50,12 @@ function App() {
           <Route path="/pan" element={<Pan />} />
           <Route path="/account" element={<BankAccountInfo />} />
           <Route path="/upi" element={<Upi />} />
-          <Route path="/aayush" element={<div>About Page</div>} />
+          <Route path="/aayush" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<div>Services Page</div>} />
+          <Route path="/services" element={<Register />} />
           <Route path="/support" element={<Support />} />
-          <Route path="/faq" element={<div>FAQ Page</div>} />
+          <Route path="/faq" element={<Register />} />
           <Route path="/blog" element={<div>Blog Page</div>} />
           <Route path="/careers" element={<div>Careers Page</div>} />
           <Route path="/terms" element={<Terms />} />
