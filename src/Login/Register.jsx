@@ -19,7 +19,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "https://supportin-backend.onrender.com/register",
+        "https://supportin-backend.onrender.com/api/auth/Register",
         {
           method: "POST",
           headers: {
