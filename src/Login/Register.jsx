@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios"; // Axios इस्तेमाल करना बेहतर है
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -16,23 +17,21 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch(
-        "https://supportin-backend.onrender.com/api/auth/Register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        },
+      // URL में 'register' को छोटा (lowercase) रखें
+      const response = await axios.post(
+        "https://supportin-backend.onrender.com/api/auth/register",
+        formData,
       );
 
-      const data = await response.json();
-      alert(data.message || data.error);
+      alert(response.data.message || "Registration Successful!");
     } catch (error) {
       console.error("Error:", error);
+      alert(
+        error.response?.data?.message ||
+          error.response?.data?.error ||
+          "Registration failed!",
+      );
     }
   };
 
@@ -49,7 +48,6 @@ function Register() {
         required
         className="border p-2"
       />
-
       <input
         type="email"
         name="email"
@@ -58,7 +56,6 @@ function Register() {
         required
         className="border p-2"
       />
-
       <input
         type="password"
         name="password"
@@ -67,7 +64,6 @@ function Register() {
         required
         className="border p-2"
       />
-
       <button type="submit" className="bg-blue-500 text-white p-2">
         Register
       </button>
