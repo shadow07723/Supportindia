@@ -41,7 +41,7 @@ const login = () => {
         placeholder="Password"
         onChange={handleChange}
       />
-      <button type="submit">Register</button>
+      <button type="submit">login</button>
     </form>
   );
 };

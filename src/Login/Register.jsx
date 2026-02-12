@@ -1,49 +1,60 @@
 import { useState } from "react";
 import axios from "axios";
 
-const Register = () => {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+const Login = () => {
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [message, setMessage] = useState("");
 
+  // Form input change handle
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // Form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "http://localhost:5000/api/auth/login",
         form,
       );
-      console.log(res.data);
+      setMessage(res.data.message);
+      console.log("User Data:", res.data.user); // Agar user ka data dekhna ho
     } catch (err) {
+      if (err.response) {
+        setMessage(err.response.data.message); // Invalid credentials
+      } else {
+        setMessage("Server error");
+      }
       console.error(err);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        onChange={handleChange}
-      />
-      <button type="submit">Register</button>
-    </form>
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      {message && <p>{message}</p>}
+    </div>
   );
 };
 
-export default Register;
+export default Login;
