@@ -1,60 +1,78 @@
-import { useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
-const Login = () => {
-  const [form, setForm] = useState({ email: "", password: "" });
-  const [message, setMessage] = useState("");
+function Register() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
-  // Form input change handle
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  // Form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        form,
+      const response = await fetch(
+        "https://supportin-backend.onrender.com/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
       );
-      setMessage(res.data.message);
-      console.log("User Data:", res.data.user); // Agar user ka data dekhna ho
-    } catch (err) {
-      if (err.response) {
-        setMessage(err.response.data.message); // Invalid credentials
-      } else {
-        setMessage("Server error");
-      }
-      console.error(err);
+
+      const data = await response.json();
+      alert(data.message || data.error);
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
-  );
-};
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-3 w-80 mx-auto mt-10"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        onChange={handleChange}
+        required
+        className="border p-2"
+      />
 
-export default Login;
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        onChange={handleChange}
+        required
+        className="border p-2"
+      />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        onChange={handleChange}
+        required
+        className="border p-2"
+      />
+
+      <button type="submit" className="bg-blue-500 text-white p-2">
+        Register
+      </button>
+    </form>
+  );
+}
+
+export default Register;
