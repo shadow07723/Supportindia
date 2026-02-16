@@ -140,7 +140,7 @@ function Aadhar() {
   };
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-[220px_1fr] h-screen overflow-hidden">
+    <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] h-screen overflow-hidden">
       <Helmet>
         <title>
           {lang === "en"
@@ -247,10 +247,10 @@ function Aadhar() {
             // English Translate
             <>
               <section>
-                <h1 className="text-2xl font-semibold text-gray-800 mb-3">
+                <h1 className="text-2xl font-semibold text-gray-800 mb-3 ">
                   What is Aadhaar?
                 </h1>
-                <p className="text-gray-700 leading-7">
+                <p className="text-gray-700 leading-7 ">
                   Aadhaar is a 12-digit unique identification number issued by
                   the Government of India to every resident of the country. This
                   number is generated based on an individual’s biometric and
@@ -262,6 +262,13 @@ function Aadhar() {
                   the largest digital identity platforms in the world, ensuring
                   transparency and convenience in service delivery.
                 </p>
+                <div className="flex items-center justify-center">
+                  <img
+                    src="Aadhar.jpg"
+                    alt="Aadhaar card"
+                    className="h-110 justify-center items-center"
+                  />
+                </div>
               </section>
               <br />
 
@@ -486,6 +493,13 @@ function Aadhar() {
                   and sturdy design makes it more convenient compared to the
                   paper-based Aadhaar letter.
                 </p>
+                <div className="flex items-center justify-center">
+                  <img
+                    src="Aadhar-pvc-card.jpeg"
+                    alt="Aadhaar-pvc-card"
+                    className="h-110 justify-center items-center"
+                  />
+                </div>
               </section>
               <br />
 
