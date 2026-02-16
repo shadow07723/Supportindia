@@ -16,36 +16,21 @@ const Serviceopt = () => {
   const serviceOptions = {
     en: {
       aadhaar: [
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
+        // Update Aadhaar
+        { label: <h2 className="text-xl text-blue-500">Update Aadhaar</h2> },
+        { label: "Check Aadhaar Update Status", path: "/new-aadhaar" },
+        {
+          label: "Update Demographics Data & Check Status",
+          path: "/update-aadhaar",
+        },
+        { label: "Enrolment & Update Forms", path: "/status-aadhaar" },
+        { label: "Aadhaar Enrolment & Update Charges", path: "/new-aadhaar" },
+        { label: "Aadhaar Update History", path: "/update-aadhaar" },
+
+        // Get Aadhaar
+        { label: <h2 className="text-xl">Get Aadhaar</h2> },
         { label: "Aadhaar Status", path: "/status-aadhaar" },
         { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
-        { label: "New Aadhaar", path: "/new-aadhaar" },
-        { label: "Update Aadhaar", path: "/update-aadhaar" },
-        { label: "Aadhaar Status", path: "/status-aadhaar" },
       ],
       pan: [
         { label: "New PAN", path: "/new-pan" },
@@ -65,7 +50,6 @@ const Serviceopt = () => {
         { label: "Open Account", path: "/open-account" },
         { label: "Close Account", path: "/close-account" },
         { label: "Account Status", path: "/status-account" },
-
         { label: "Open Account", path: "/open-account" },
         { label: "Close Account", path: "/close-account" },
         { label: "Account Status", path: "/status-account" },
@@ -228,8 +212,8 @@ const Serviceopt = () => {
       { id: "aayush", title: "Aayushman Bharat", link: "/aayush" },
       { id: "contact", title: "Contact", link: "/contact" },
       { id: "about", title: "About", link: "/about" },
-      // { id: "home", title: "Home", link: "/" },
-      // { id: "services", title: "Services", link: "/services" },
+      { id: "home", title: "Home", link: "/" },
+      { id: "services", title: "Services", link: "/services" },
       { id: "support", title: "Support", link: "/support" },
       { id: "faq", title: "FAQ", link: "/faq" },
       { id: "blog", title: "Blog", link: "/blog" },
@@ -240,17 +224,17 @@ const Serviceopt = () => {
     hi: [
       { id: "aadhaar", title: "आधार कार्ड", link: "/aadhar" },
       { id: "pan", title: "पैन कार्ड", link: "/pan" },
-      // { id: "account", title: "बैंक खाता", link: "/account" },
+      { id: "account", title: "बैंक खाता", link: "/account" },
       { id: "upi", title: "यूपीआई", link: "/upi" },
-      // { id: "aayush", title: "आयुष्मान भारत", link: "/aayush" },
+      { id: "aayush", title: "आयुष्मान भारत", link: "/aayush" },
       { id: "contact", title: "संपर्क", link: "/contact" },
       { id: "about", title: "हमारे बारे में", link: "/about" },
-      // { id: "home", title: "होम", link: "/" },
-      // { id: "services", title: "सेवाएँ", link: "/services" },
+      { id: "home", title: "होम", link: "/" },
+      { id: "services", title: "सेवाएँ", link: "/services" },
       { id: "support", title: "सहायता", link: "/support" },
-      // { id: "faq", title: "FAQ", link: "/faq" },
-      // { id: "blog", title: "ब्लॉग", link: "/blog" },
-      // { id: "careers", title: "करियर", link: "/careers" },
+      { id: "faq", title: "FAQ", link: "/faq" },
+      { id: "blog", title: "ब्लॉग", link: "/blog" },
+      { id: "careers", title: "करियर", link: "/careers" },
       { id: "terms", title: "सेवा की शर्तें", link: "/terms" },
       { id: "privacy", title: "गोपनीयता नीति", link: "/privacy" },
     ],
@@ -309,7 +293,7 @@ const Serviceopt = () => {
     <div className=" text-[#0A2E5D] w-full h-10  relative">
       <div className="flex items-center bg-[#FFFFFF] ">
         {activeService && activeService !== "home" && (
-          <div ref={dotRef} className="flex-shrink-0 hidden">
+          <div ref={dotRef} className="flex-shrink-0 xl:hidden">
             <button onClick={toggleDropdown} className="px-4">
               <VscThreeBars className="text-2xl" />
             </button>

@@ -92,7 +92,7 @@ function Header({ activeSearchBar, setActiveSearchBar }) {
             <IoSearch className="text-white md:text-blue-500" />
           </button>
 
-          {/* <button className="text-white">{t.signIn}</button> */}
+          <button className="text-white">{t.signIn}</button>
         </div>
       )}
     </div>

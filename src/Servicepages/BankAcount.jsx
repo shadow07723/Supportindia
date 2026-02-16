@@ -88,14 +88,7 @@ function BankAcount() {
             </>
           )}
 
-          {[...Array(25)].map((_, i) => (
-            <p key={i} className="text-gray-600 mb-2">
-              {lang === "en"
-                ? `Sample content line ${i + 1}`
-                : `उदाहरण कंटेंट लाइन ${i + 1}`}
-            </p>
-          ))}
-
+         
           <Footer />
         </div>
       </main>
