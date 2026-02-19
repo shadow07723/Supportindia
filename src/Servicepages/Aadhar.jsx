@@ -5,6 +5,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import Footer from "../Header/Footer";
 import { Helmet } from "react-helmet-async";
 
+
 function Aadhar() {
   const { lang } = useContext(LanguageContext);
   const location = useLocation();
@@ -27,7 +28,7 @@ function Aadhar() {
           </h2>
         ),
       },
-      { label: "Check Aadhaar Update Status", path: "/new-aadhaar" },
+      { label: "Check Aadhaar Update Status", path: "/AadhaarStatusGuide" },
       {
         label: "Update Demographics Data & Check Status",
         path: "/update-aadhaar",
@@ -86,7 +87,7 @@ function Aadhar() {
       },
       {
         label: "आधार अपडेट की स्थिति जांचें",
-        path: "/new-aadhaar",
+        path: "/AadhaarStatusGuide",
       },
       {
         label: "जनसांख्यिकीय डेटा अपडेट करें और स्थिति जांचें",
@@ -616,6 +617,13 @@ function Aadhar() {
                   बड़े प्लेटफॉर्म के रूप में विकसित किया गया है, जिससे
                   पारदर्शिता और सुविधा दोनों सुनिश्चित होती हैं।
                 </p>
+                <div className="flex items-center justify-center">
+                  <img
+                    src="Aadhar.jpg"
+                    alt="Aadhaar card"
+                    className="h-110 justify-center items-center"
+                  />
+                </div>
               </section>
               <br />
 
@@ -847,6 +855,13 @@ function Aadhar() {
                   के कारण यह सामान्य कागज़ वाले आधार की तुलना में अधिक सुविधाजनक
                   है।
                 </p>
+                <div className="flex items-center justify-center">
+                  <img
+                    src="Aadhar-pvc-card.jpeg"
+                    alt="Aadhaar-pvc-card"
+                    className="h-110 justify-center items-center"
+                  />
+                </div>
               </section>
               <br />
 
@@ -954,6 +969,7 @@ function Aadhar() {
           )}
 
           <Footer />
+          
         </div>
       </main>
     </div>

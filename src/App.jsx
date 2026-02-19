@@ -18,6 +18,7 @@ import About from "./WebOption/About";
 import Support from "./WebOption/Support";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
+import AadhaarStatusGuide from "./Aadharopt/AadhaarStatusGuide";
 // 👈 import new desktop service options component
 
 function App() {
@@ -64,7 +65,10 @@ function App() {
 
           {/* inner options routes can be added here          */}
           {/* aadhaar option */}
-          <Route path="/new-aadhaar" element={<div>New Aadhaar Page</div>} />
+          <Route
+            path="/AadhaarStatusGuide"
+            element={<AadhaarStatusGuide/>}
+          />
           <Route
             path="/update-aadhaar"
             element={<div>Update Aadhaar Page</div>}
