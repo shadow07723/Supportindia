@@ -18,60 +18,63 @@ const Serviceopt = () => {
     en: {
       aadhaar: [
         // Update Aadhaar
-             {
-               label: (
-                 <h2 className="flex items-center text-lg text-blue-300 ">
-                   Update Aadhaar
-                   <FaChevronDown className="" />
-                 </h2>
-               ),
-             },
-             { label: "Check Aadhaar Update Status", path: "/new-aadhaar" },
-             {
-               label: "Update Demographics Data & Check Status",
-               path: "/update-aadhaar",
-             },
-             { label: "Enrolment & Update Forms", path: "/status-aadhaar" },
-             { label: "Aadhaar Enrolment & Update Charges", path: "/new-aadhaar" },
-             { label: "Aadhaar Update History", path: "/update-aadhaar" },
-       
-             // Get Aadhaar
-             {
-               label: (
-                 <h2 className="flex items-center text-lg text-blue-300 ">
-                   Get Aadhaar
-                   <FaChevronDown className="" />
-                 </h2>
-               ),
-             },
-             { label: "Book an Appointment", path: "/new-aadhaar" },
-             {
-               label: "Check Aadhaar Status",
-               path: "/update-aadhaar",
-             },
-             { label: "Download Aadhaar", path: "/status-aadhaar" },
-             { label: "Order Aadhaar PVC Card", path: "/new-aadhaar" },
-             { label: "Check Aadhaar PVC Card Status", path: "/update-aadhaar" },
-             { label: "Aadhaar Enrolment & Update Charges", path: "/new-aadhaar" },
-             { label: "Enrolment & Update Forms", path: "/update-aadhaar" },
-       
-             // Aadhaar Services
-             {
-               label: (
-                 <h2 className="flex items-center text-lg text-blue-300 ">
-                   Aadhaar Services
-                   <FaChevronDown className="" />
-                 </h2>
-               ),
-             },
-             { label: "Verify an Aadhaar Number", path: "/new-aadhaar" },
-             {
-               label: "Verify Email/Mobile Number",
-               path: "/update-aadhaar",
-             },
-             { label: "Virtual ID (VID) Generator", path: "/status-aadhaar" },
-             { label: "Aadhaar Paperless Offline e-kyc (Beta)", path: "/new-aadhaar" },
-             { label: "Lock/Unlock Biometrics", path: "/update-aadhaar" },
+        {
+          label: (
+            <h2 className="flex items-center text-lg text-blue-300 ">
+              Update Aadhaar
+              <FaChevronDown className="" />
+            </h2>
+          ),
+        },
+        { label: "Check Aadhaar Update Status", path: "/AadhaarStatusGuide" },
+        {
+          label: "Update Demographics Data & Check Status",
+          path: "/update-aadhaar",
+        },
+        { label: "Enrolment & Update Forms", path: "/status-aadhaar" },
+        { label: "Aadhaar Enrolment & Update Charges", path: "/new-aadhaar" },
+        { label: "Aadhaar Update History", path: "/update-aadhaar" },
+
+        // Get Aadhaar
+        {
+          label: (
+            <h2 className="flex items-center text-lg text-blue-300 ">
+              Get Aadhaar
+              <FaChevronDown className="" />
+            </h2>
+          ),
+        },
+        { label: "Book an Appointment", path: "/new-aadhaar" },
+        {
+          label: "Check Aadhaar Status",
+          path: "/update-aadhaar",
+        },
+        { label: "Download Aadhaar", path: "/status-aadhaar" },
+        { label: "Order Aadhaar PVC Card", path: "/new-aadhaar" },
+        { label: "Check Aadhaar PVC Card Status", path: "/update-aadhaar" },
+        { label: "Aadhaar Enrolment & Update Charges", path: "/new-aadhaar" },
+        { label: "Enrolment & Update Forms", path: "/update-aadhaar" },
+
+        // Aadhaar Services
+        {
+          label: (
+            <h2 className="flex items-center text-lg text-blue-300 ">
+              Aadhaar Services
+              <FaChevronDown className="" />
+            </h2>
+          ),
+        },
+        { label: "Verify an Aadhaar Number", path: "/new-aadhaar" },
+        {
+          label: "Verify Email/Mobile Number",
+          path: "/update-aadhaar",
+        },
+        { label: "Virtual ID (VID) Generator", path: "/status-aadhaar" },
+        {
+          label: "Aadhaar Paperless Offline e-kyc (Beta)",
+          path: "/new-aadhaar",
+        },
+        { label: "Lock/Unlock Biometrics", path: "/update-aadhaar" },
       ],
       pan: [
         { label: "New PAN", path: "/new-pan" },
@@ -168,66 +171,69 @@ const Serviceopt = () => {
     hi: {
       aadhaar: [
         // Update Aadhaar
-             {
-               label: (
-                 <h2 className="flex items-center text-lg text-blue-300 ">
-                   आधार अपडेट करें
-                   <FaChevronDown className="" />
-                 </h2>
-               ),
-             },
-             {
-               label: "आधार अपडेट की स्थिति जांचें",
-               path: "/new-aadhaar",
-             },
-             {
-               label: "जनसांख्यिकीय डेटा अपडेट करें और स्थिति जांचें",
-               path: "/update-aadhaar",
-             },
-             {
-               label: "नामांकन एवं अद्यतन प्रपत्र",
-               path: "/status-aadhaar",
-             },
-             { label: "आधार नामांकन और अद्यतन शुल्क", path: "/new-aadhaar" },
-             { label: "आधार अपडेट इतिहास", path: "/update-aadhaar" },
-       
-             // Get Aadhaar
-             {
-               label: (
-                 <h2 className="flex items-center text-lg text-blue-300 ">
-                   आधार कार्ड प्राप्त करें
-                   <FaChevronDown className="" />
-                 </h2>
-               ),
-             },
-             { label: "अपॉइंटमेंट बुक करें", path: "/new-aadhaar" },
-             {
-               label: "आधार स्टेटस चेक करें",
-               path: "/update-aadhaar",
-             },
-             { label: "आधार डाउनलोड करें", path: "/status-aadhaar" },
-             { label: "आधार पीवीसी कार्ड ऑर्डर करें", path: "/new-aadhaar" },
-             { label: "आधार पीवीसी कार्ड की स्थिति जांचें", path: "/update-aadhaar" },
-             { label: "आधार नामांकन और अद्यतन शुल्क", path: "/new-aadhaar" },
-             { label: "नामांकन एवं अद्यतन प्रपत्र", path: "/update-aadhaar" },
-       
-             // Aadhaar Services
-             {
-               label: (
-                 <h2 className="flex items-center text-lg text-blue-300 ">
-                   आधार सेवाएं
-                   <FaChevronDown className="" />
-                 </h2>
-               ),
-             },
-             { label: "आधार नंबर सत्यापित करें", path: "/new-aadhaar" },
-             {
-               label: "ईमेल/मोबाइल नंबर सत्यापित करें",
-               path: "/update-aadhaar",
-             },
-             { label: "वर्चुअल आईडी (वीआईडी) जनरेटर", path: "/status-aadhaar" },
-             { label: "आधार पेपरलेस ऑफलाइन ई-केवाईसी (बीटा)", path: "/new-aadhaar" },
-             { label: "बायोमेट्रिक्स को लॉक/अनलॉक करें", path: "/update-aadhaar" },
+        {
+          label: (
+            <h2 className="flex items-center text-lg text-blue-300 ">
+              आधार अपडेट करें
+              <FaChevronDown className="" />
+            </h2>
+          ),
+        },
+        {
+          label: "आधार अपडेट की स्थिति जांचें",
+          path: "/AadhaarStatusGuide",
+        },
+        {
+          label: "जनसांख्यिकीय डेटा अपडेट करें और स्थिति जांचें",
+          path: "/update-aadhaar",
+        },
+        {
+          label: "नामांकन एवं अद्यतन प्रपत्र",
+          path: "/status-aadhaar",
+        },
+        { label: "आधार नामांकन और अद्यतन शुल्क", path: "/new-aadhaar" },
+        { label: "आधार अपडेट इतिहास", path: "/update-aadhaar" },
+
+        // Get Aadhaar
+        {
+          label: (
+            <h2 className="flex items-center text-lg text-blue-300 ">
+              आधार कार्ड प्राप्त करें
+              <FaChevronDown className="" />
+            </h2>
+          ),
+        },
+        { label: "अपॉइंटमेंट बुक करें", path: "/new-aadhaar" },
+        {
+          label: "आधार स्टेटस चेक करें",
+          path: "/update-aadhaar",
+        },
+        { label: "आधार डाउनलोड करें", path: "/status-aadhaar" },
+        { label: "आधार पीवीसी कार्ड ऑर्डर करें", path: "/new-aadhaar" },
+        {
+          label: "आधार पीवीसी कार्ड की स्थिति जांचें",
+          path: "/update-aadhaar",
+        },
+        { label: "आधार नामांकन और अद्यतन शुल्क", path: "/new-aadhaar" },
+        { label: "नामांकन एवं अद्यतन प्रपत्र", path: "/update-aadhaar" },
+
+        // Aadhaar Services
+        {
+          label: (
+            <h2 className="flex items-center text-lg text-blue-300 ">
+              आधार सेवाएं
+              <FaChevronDown className="" />
+            </h2>
+          ),
+        },
+        { label: "आधार नंबर सत्यापित करें", path: "/new-aadhaar" },
+        {
+          label: "ईमेल/मोबाइल नंबर सत्यापित करें",
+          path: "/update-aadhaar",
+        },
+        { label: "वर्चुअल आईडी (वीआईडी) जनरेटर", path: "/status-aadhaar" },
+        { label: "आधार पेपरलेस ऑफलाइन ई-केवाईसी (बीटा)", path: "/new-aadhaar" },
+        { label: "बायोमेट्रिक्स को लॉक/अनलॉक करें", path: "/update-aadhaar" },
       ],
       pan: [
         { label: "नया पैन", path: "/new-pan" },
