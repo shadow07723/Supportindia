@@ -151,90 +151,83 @@ function AadhaarStatusGuide() {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-[300px_1fr] h-screen overflow-hidden">
       <Helmet>
-        {/* Primary Meta Tags */}
+        {/* ✅ Title (Primary Ranking Factor) */}
         <title>
-          {lang === "en"
-            ? "Check Aadhaar Status Online by EID, SRN, URN, SID | UIDAI Guide"
-            : "EID, SRN, URN, SID से आधार स्टेटस चेक करें | UIDAI गाइड"}
+          Check Aadhaar Status Online by EID, SRN, URN, SID | UIDAI Aadhaar
+          Status Guide
         </title>
 
+        {/* ✅ Meta Description */}
         <meta
           name="description"
-          content={
-            lang === "en"
-              ? "Learn how to check Aadhaar card status online using Enrollment ID (EID), SRN, URN, or SID. Complete UIDAI guide with step-by-step instructions, status tracking, and troubleshooting."
-              : "Enrollment ID (EID), SRN, URN या SID का उपयोग करके आधार कार्ड स्टेटस ऑनलाइन कैसे चेक करें। UIDAI की पूरी गाइड, स्टेप-बाय-स्टेप निर्देश और स्टेटस ट्रैकिंग जानकारी।"
-          }
+          content="Check Aadhaar card status online using Enrollment ID (EID), SRN, URN, or SID. Complete step-by-step UIDAI guide to track Aadhaar update, PVC card, and enrollment status instantly."
         />
 
-        <meta
-          name="keywords"
-          content="Check Aadhaar status, UIDAI Aadhaar status, Aadhaar status check online, EID status, SRN status, URN status, SID status, Aadhaar update status, UIDAI Aadhaar services, आधार स्टेटस चेक, UIDAI आधार स्थिति"
-        />
+        {/* ✅ Mobile SEO (VERY IMPORTANT) */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="robots" content="index, follow" />
+        {/* ✅ Canonical URL */}
+        <link rel="canonical" href="https://supportin.in/AadhaarStatusGuide" />
+
+        {/* ✅ Robots */}
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+
+        {/* ✅ Author */}
         <meta name="author" content="Support India" />
 
-        {/* Canonical URL */}
-        <link
-          rel="canonical"
-          href="https://supportin.in/check-aadhaar-status"
-        />
-
-        {/* Open Graph (Facebook, WhatsApp) */}
-        <meta property="og:type" content="website" />
-
+        {/* ✅ Open Graph */}
+        <meta property="og:type" content="article" />
         <meta
           property="og:title"
-          content="Check Aadhaar Status Online | UIDAI Complete Guide"
+          content="Check Aadhaar Status Online | UIDAI Guide"
         />
-
         <meta
           property="og:description"
-          content="Track Aadhaar card status using Enrollment ID, SRN, URN, or SID. Complete UIDAI Aadhaar status checking guide."
+          content="Track Aadhaar status using EID, SRN, URN or SID with complete UIDAI guide."
         />
-
         <meta
           property="og:url"
-          content="https://supportin.in/check-aadhaar-status"
+          content="https://supportin.in/AadhaarStatusGuide"
         />
-
-        <meta property="og:site_name" content="Support India" />
-
         <meta property="og:image" content="https://supportin.in/Logo.png" />
+        <meta property="og:site_name" content="Support India" />
+        <meta property="og:locale" content="en_IN" />
 
-        {/* Twitter SEO */}
+        {/* ✅ Twitter SEO */}
         <meta name="twitter:card" content="summary_large_image" />
-
         <meta
           name="twitter:title"
           content="Check Aadhaar Status Online | UIDAI Guide"
         />
-
         <meta
           name="twitter:description"
-          content="Step-by-step guide to check Aadhaar status using EID, SRN, URN, and SID."
+          content="Step-by-step guide to check Aadhaar status."
         />
-
         <meta name="twitter:image" content="https://supportin.in/Logo.png" />
 
-        {/* Structured Data for Google Rich Results */}
+        {/* ✅ FAQ Structured Data (VERY IMPORTANT) */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Check Aadhaar Status Online",
-            url: "https://supportin.in/check-aadhaar-status",
-            description:
-              "Complete guide to check Aadhaar card status using Enrollment ID, SRN, URN, or SID.",
-            publisher: {
-              "@type": "Organization",
-              name: "Support India",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://supportin.in/Logo.png",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How to check Aadhaar status?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You can check Aadhaar status using Enrollment ID on UIDAI official website.",
+                },
               },
-            },
+              {
+                "@type": "Question",
+                name: "What is SRN number?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "SRN is Service Request Number used to track Aadhaar update requests.",
+                },
+              },
+            ],
           })}
         </script>
       </Helmet>

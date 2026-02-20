@@ -28,7 +28,7 @@ const Serviceopt = () => {
             </h2>
           ),
         },
-        { label: "Check Aadhaar Update Status", path: "/AadhaarStatusGuide" },
+        { label: "Check Aadhaar Update Status", path: "/check-aadhaar-status" },
         {
           label: "Update Demographics Data & Check Status",
           path: "/update-aadhaar",
@@ -161,7 +161,7 @@ const Serviceopt = () => {
         },
         {
           label: "आधार अपडेट की स्थिति जांचें",
-          path: "/AadhaarStatusGuide",
+          path: "/check-aadhaar-status",
         },
         {
           label: "जनसांख्यिकीय डेटा अपडेट करें और स्थिति जांचें",
