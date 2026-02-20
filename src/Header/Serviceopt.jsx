@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { VscThreeBars } from "react-icons/vsc";
+import { HiMiniBars3 } from "react-icons/hi2";
+import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { FaChevronDown } from "react-icons/fa6";
 import { LanguageContext } from "../LanguageContext";
 
@@ -360,14 +361,14 @@ const Serviceopt = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
      if (
-       openMenu &&
-       dotRef.current &&
-       menuRef.current &&
-       !dotRef.current.contains(event.target) &&
-       !menuRef.current.contains(event.target)
-     ) {
-       setOpenMenu(false);
-     }
+  openMenu &&
+  dotRef.current &&
+  menuRef.current &&
+  !dotRef.current.contains(event.target) &&
+  !menuRef.current.contains(event.target)
+) {
+  setOpenMenu(false);
+}
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -378,8 +379,15 @@ const Serviceopt = () => {
       <div className="flex items-center bg-[#FFFFFF] ">
         {activeService && activeService !== "home" && (
           <div ref={dotRef} className="flex-shrink-0 xl:hidden">
-            <button onClick={toggleDropdown} className="px-4">
-              <VscThreeBars className="text-2xl" />
+            <button
+              onClick={toggleDropdown}
+              className="px-4 transition-all duration-300"
+            >
+              {openMenu ? (
+                <HiMiniBars3CenterLeft className="text-2xl  transition-all duration-400" />
+              ) : (
+                <HiMiniBars3 className="text-2xl transition-all duration-400 " />
+              )}
             </button>
           </div>
         )}
@@ -406,6 +414,7 @@ const Serviceopt = () => {
 
       {activeService && (
         <div
+          ref={menuRef}
           className={`fixed bg-[#FFFFFF] w-52 h-[100vh] overflow-y-auto scrollbar-hide shadow-lg z-[9999] transition-all duration-300  ${
             openMenu
               ? "opacity-100 translate-x-0"
