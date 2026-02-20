@@ -11,6 +11,7 @@ const Serviceopt = () => {
   const [activeService, setActiveService] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
   const [menuPos, setMenuPos] = useState({ top: 0, left: 0 });
+  const menuRef = useRef(null);
   const dotRef = useRef(null);
   const cardRefs = useRef([]);
 
@@ -84,28 +85,6 @@ const Serviceopt = () => {
       account: [
         { label: "Open Account", path: "/open-account" },
         { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
-        { label: "Open Account", path: "/open-account" },
-        { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
-        { label: "Open Account", path: "/open-account" },
-        { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
-        { label: "Open Account", path: "/open-account" },
-        { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
-        { label: "Open Account", path: "/open-account" },
-        { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
-        { label: "Open Account", path: "/open-account" },
-        { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
-        { label: "Open Account", path: "/open-account" },
-        { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
-        { label: "Open Account", path: "/open-account" },
-        { label: "Close Account", path: "/close-account" },
-        { label: "Account Status", path: "/status-account" },
       ],
       upi: [
         { label: "Create UPI ID", path: "/create-upi-id" },
@@ -380,13 +359,15 @@ const Serviceopt = () => {
   // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dotRef.current &&
-        !dotRef.current.contains(event.target) &&
-        openMenu
-      ) {
-        setOpenMenu(false);
-      }
+     if (
+       openMenu &&
+       dotRef.current &&
+       menuRef.current &&
+       !dotRef.current.contains(event.target) &&
+       !menuRef.current.contains(event.target)
+     ) {
+       setOpenMenu(false);
+     }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -425,23 +406,32 @@ const Serviceopt = () => {
 
       {activeService && (
         <div
-          className={`fixed bg-[#FFFFFF] w-52 h-[100vh] overflow-y-auto scrollbar-hide shadow-lg z-[9999]"transition-all duration-300  ${
+          className={`fixed bg-[#FFFFFF] w-52 h-[100vh] overflow-y-auto scrollbar-hide shadow-lg z-[9999] transition-all duration-300  ${
             openMenu
               ? "opacity-100 translate-x-0"
               : "opacity-0 -translate-x-full pointer-events-none"
           }`}
           style={{ top: menuPos.top, left: menuPos.left }}
         >
-          {serviceOptions[lang][activeService]?.map((item, i) => (
-            <Link
-              key={i}
-              to={item.path}
-              onClick={() => setOpenMenu(false)}
-              className="block px-4 py-2 text-sm hover:bg-[#DCEBFA]"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {serviceOptions[lang][activeService]?.map((item, i) =>
+            item.path ? (
+              <Link
+                key={i}
+                to={item.path}
+                onClick={() => setOpenMenu(false)}
+                className="block px-4 py-2 text-sm hover:bg-[#DCEBFA]"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <div
+                key={i}
+                className="px-4 py-2 text-blue-400 font-semibold cursor-default"
+              >
+                {item.label}
+              </div>
+            ),
+          )}
         </div>
       )}
     </div>
