@@ -31,7 +31,7 @@ function SearchBar({
     { name: "about", path: "/about" },
     { name: "upi", path: "/upi" },
     { name: "doctoron", path: "/doctoron" },
-      { name: "aadhaar", path: "/aadhar" },
+    { name: "aadhaar", path: "/aadhar" },
     { name: "aayush", path: "/aayush" },
     { name: "account", path: "/account" },
     { name: "pan", path: "/pan" },
@@ -39,8 +39,10 @@ function SearchBar({
     { name: "about", path: "/about" },
     { name: "upi", path: "/upi" },
     { name: "doctoron", path: "/doctoron" },
-    { name: "privacy", path: "/privacy" }, // 4th option example
-     // 6th option example
+    { name: "privacy", path: "/privacy" },
+
+    // Aadhar card inre options
+    { name: "Update Status", path: "/AadhaarStatusGuide" },
   ];
 
   const filteredPages = pages.filter((p) =>
