@@ -5,7 +5,7 @@ const images = [
   {
     src: "1000046237-removebg-preview.png",
     link: "/page1",
-    className: "md:h-84 h-50 w-full rounded-2xl object-cover ",
+    className: "md:h-84 h-50 w-full rounded-2xl object-cover",
   },
   {
     src: "Homeposter1.png",
@@ -24,13 +24,16 @@ const images = [
   },
 ];
 
+// ✅ Duplicate first image for infinite loop
+const slides = [...images, images[0]];
+
 function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [completedDots, setCompletedDots] = useState([]); // रंग बदलने के लिए
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const navigate = useNavigate();
   const timerRef = useRef(null);
 
-  // Start timer for slide change
+  // ✅ Auto-slide
   useEffect(() => {
     startTimer();
     return () => clearInterval(timerRef.current);
@@ -38,77 +41,68 @@ function Carousel() {
 
   const startTimer = () => {
     clearInterval(timerRef.current);
-    timerRef.current = setTimeout(() => {
-      // Mark current dot as completed
-      setCompletedDots((prev) => {
-        const newArr = [...prev];
-        newArr[currentIndex] = true;
-        return newArr;
-      });
-
-      // Move to next slide
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // 3 seconds
+    timerRef.current = setInterval(() => {
+      setCurrentIndex((prev) => prev + 1);
+      setIsTransitioning(true);
+    }, 5000); // 5 second interval
   };
 
+  // ✅ Smooth jump back for infinite loop
+  const handleTransitionEnd = () => {
+    if (currentIndex === images.length) {
+      setIsTransitioning(false);
+      setCurrentIndex(0);
+    } else {
+      setIsTransitioning(true);
+    }
+  };
+
+  // ✅ Image click navigate
   const handleImageClick = () => {
-    navigate(images[currentIndex].link);
+    navigate(slides[currentIndex % images.length].link);
   };
 
+  // ✅ Dot click
   const handleDotClick = (idx) => {
     setCurrentIndex(idx);
-    startTimer();
+    setIsTransitioning(true);
   };
 
   return (
-    <div className="pt-3">
-      <div className="relative w-[90vw]   border-4 border-white rounded-2xl  mx-auto">
-        {/* Image */}
-        <img
-          src={images[currentIndex].src}
-          alt={`Slide ${currentIndex + 1}`}
-          className={`object-fill cursor-pointer ${images[currentIndex].className}`}
-          onClick={handleImageClick}
-        />
+    <div className="pt-3 overflow-hidden relative w-[90vw] mx-auto rounded-2xl">
+      {/* Slide container */}
+      <div
+        className={`flex ${isTransitioning ? "transition-transform duration-[2000ms] ease-in-out" : ""}`}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        onTransitionEnd={handleTransitionEnd}
+      >
+        {slides.map((img, idx) => (
+          <img
+            key={idx}
+            src={img.src}
+            alt={`Slide ${idx + 1}`}
+            onClick={handleImageClick}
+            className={`w-full flex-shrink-0 cursor-pointer ${img.className}`}
+          />
+        ))}
+      </div>
 
-        {/* Dots */}
-        <div className=" flex justify-center space-x-4 mt-4">
-          {images.map((_, idx) => (
+      {/* Dots with progress animation */}
+      <div className="flex justify-center space-x-2 mt-4">
+        {images.map((_, idx) => (
+          <div
+            key={idx}
+            className={`h-2 w-10 md:w-12 bg-gray-300 rounded-full overflow-hidden cursor-pointer`}
+            onClick={() => handleDotClick(idx)}
+          >
             <div
-              key={idx}
-              className={` h-1 rounded-full border-transparent  bg-gray-300 overflow-hidden cursor-pointer
-                transition-all duration-300
-               ${idx === currentIndex ? "w-12" : "w-6"}
-              `}
-              onClick={() => handleDotClick(idx)}
-            >
-              {/* Fill animation */}
-              <div
-                className={`h-full   ${
-                  idx === currentIndex
-                    ? "bg-gray-500 animate-fill"
-                    : completedDots[idx]
-                      ? "bg-gray-500"
-                      : "bg-gray-300"
-                }`}
-                style={{ width: idx === currentIndex ? "0%" : "100%" }}
-              ></div>
-            </div>
-          ))}
-        </div>
-
-        {/* Animation CSS */}
-        <style>
-          {`
-          @keyframes fill {
-            from { width: 0%; }
-            to { width: 100%; }
-          }
-          .animate-fill {
-            animation: fill 3s linear forwards;
-          }
-        `}
-        </style>
+              className={`h-full bg-gray-500 transition-all duration-[5000ms] ease-linear`}
+              style={{
+                width: idx === (currentIndex % images.length) ? "100%" : "0%",
+              }}
+            ></div>
+          </div>
+        ))}
       </div>
     </div>
   );
