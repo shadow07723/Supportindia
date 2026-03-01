@@ -16,6 +16,42 @@ const Serviceopt = () => {
   const dotRef = useRef(null);
   const cardRefs = useRef([]);
 
+  
+  const cards = {
+    en: [
+      { id: "aadhaar", title: "Aadhaar Card", link: "/aadhar" },
+      // { id: "pan", title: "PAN Card", link: "/pan" },
+      // { id: "account", title: "Bank Account", link: "/account" },
+      // { id: "upi", title: "UPI", link: "/upi" },
+      // { id: "aayush", title: "Aayushman Bharat", link: "/aayush" },
+      { id: "contact", title: "Contact", link: "/contact" },
+      { id: "about", title: "About", link: "/about" },
+      { id: "services", title: "Services", link: "/services" },
+      { id: "support", title: "Support", link: "/support" },
+      // { id: "faq", title: "FAQ", link: "/faq" },
+      { id: "blog", title: "Blog", link: "/blog" },
+      // { id: "careers", title: "Careers", link: "/careers" },
+      { id: "terms", title: "Terms of Service", link: "/terms" },
+      { id: "privacy", title: "Privacy Policy", link: "/privacy" },
+    ],
+    hi: [
+      { id: "aadhaar", title: "आधार कार्ड", link: "/aadhar" },
+      // { id: "pan", title: "पैन कार्ड", link: "/pan" },
+      // { id: "account", title: "बैंक खाता", link: "/account" },
+      // { id: "upi", title: "यूपीआई", link: "/upi" },
+      // { id: "aayush", title: "आयुष्मान भारत", link: "/aayush" },
+      { id: "contact", title: "संपर्क", link: "/contact" },
+      { id: "about", title: "हमारे बारे में", link: "/about" },
+      { id: "services", title: "सेवाएँ", link: "/services" },
+      { id: "support", title: "सहायता", link: "/support" },
+      // { id: "faq", title: "FAQ", link: "/faq" },
+      { id: "blog", title: "ब्लॉग", link: "/blog" },
+      // { id: "careers", title: "करियर", link: "/careers" },
+      { id: "terms", title: "सेवा की शर्तें", link: "/terms" },
+      { id: "privacy", title: "गोपनीयता नीति", link: "/privacy" },
+    ],
+  };
+
   const serviceOptions = {
     en: {
       aadhaar: [
@@ -288,40 +324,6 @@ const Serviceopt = () => {
     },
   };
 
-  const cards = {
-    en: [
-      { id: "aadhaar", title: "Aadhaar Card", link: "/aadhar" },
-      { id: "pan", title: "PAN Card", link: "/pan" },
-      { id: "account", title: "Bank Account", link: "/account" },
-      { id: "upi", title: "UPI", link: "/upi" },
-      { id: "aayush", title: "Aayushman Bharat", link: "/aayush" },
-      { id: "contact", title: "Contact", link: "/contact" },
-      { id: "about", title: "About", link: "/about" },
-      { id: "services", title: "Services", link: "/services" },
-      { id: "support", title: "Support", link: "/support" },
-      { id: "faq", title: "FAQ", link: "/faq" },
-      { id: "blog", title: "Blog", link: "/blog" },
-      { id: "careers", title: "Careers", link: "/careers" },
-      { id: "terms", title: "Terms of Service", link: "/terms" },
-      { id: "privacy", title: "Privacy Policy", link: "/privacy" },
-    ],
-    hi: [
-      { id: "aadhaar", title: "आधार कार्ड", link: "/aadhar" },
-      { id: "pan", title: "पैन कार्ड", link: "/pan" },
-      { id: "account", title: "बैंक खाता", link: "/account" },
-      { id: "upi", title: "यूपीआई", link: "/upi" },
-      { id: "aayush", title: "आयुष्मान भारत", link: "/aayush" },
-      { id: "contact", title: "संपर्क", link: "/contact" },
-      { id: "about", title: "हमारे बारे में", link: "/about" },
-      { id: "services", title: "सेवाएँ", link: "/services" },
-      { id: "support", title: "सहायता", link: "/support" },
-      { id: "faq", title: "FAQ", link: "/faq" },
-      { id: "blog", title: "ब्लॉग", link: "/blog" },
-      { id: "careers", title: "करियर", link: "/careers" },
-      { id: "terms", title: "सेवा की शर्तें", link: "/terms" },
-      { id: "privacy", title: "गोपनीयता नीति", link: "/privacy" },
-    ],
-  };
 
   // Close dropdown on route change
   useEffect(() => {

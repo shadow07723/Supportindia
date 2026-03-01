@@ -6,9 +6,9 @@ import Footer from "../Header/Footer";
 function HomeComponent() {
   return (
     <div>
-      <HorizontalCards />
+      {/* <HorizontalCards /> */}
       <Cards />
-      <Cards />
+      {/* <Cards /> */}
       <Footer />
     </div>
   );

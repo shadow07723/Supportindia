@@ -26,224 +26,224 @@ const Cards = () => {
 
   const cardData = {
     en: [
-      {
-        id: "upi",
-        image: "Homeposter1.png",
-        path: "/upi",
-        service: "UPI Service",
-      },
-      {
-        id: "pan",
-        image: "Homeposter1.png",
-        path: "/pan",
-        service: "PAN Card",
-      },
+      // {
+      //   id: "upi",
+      //   image: "Homeposter1.png",
+      //   path: "/upi",
+      //   service: "UPI Service",
+      // },
+      // {
+      //   id: "pan",
+      //   image: "Homeposter1.png",
+      //   path: "/pan",
+      //   service: "PAN Card",
+      // },
       {
         id: "aadhaar",
         image: "Homeposter1.png",
-        path: "/aadhaar",
+        path: "/aadhar",
         service: "Aadhaar",
       },
-      {
-        id: "account",
-        image: "Homeposter1.png",
-        path: "/account",
-        service: "Account",
-      },
-      {
-        id: "aayush",
-        image: "Homeposter1.png",
-        path: "/aayush",
-        service: "Aayush",
-      },
-      {
-        id: "privacy",
-        image: "Homeposter1.png",
-        path: "/privacy",
-        service: "Privacy",
-      },
-      {
-        id: "service7",
-        image: "Homeposter1.png",
-        path: "/service7",
-        service: "Service 7",
-      },
-      {
-        id: "service8",
-        image: "Homeposter1.png",
-        path: "/service8",
-        service: "Service 8",
-      },
-      {
-        id: "service9",
-        image: "Homeposter1.png",
-        path: "/service9",
-        service: "Service 9",
-      },
-      {
-        id: "service10",
-        image: "Homeposter1.png",
-        path: "/service10",
-        service: "Service 10",
-      },
-      {
-        id: "service11",
-        image: "Homeposter1.png",
-        path: "/service11",
-        service: "Service 11",
-      },
-      {
-        id: "service12",
-        image: "Homeposter1.png",
-        path: "/service12",
-        service: "Service 12",
-      },
-      {
-        id: "service13",
-        image: "Homeposter1.png",
-        path: "/service13",
-        service: "Service 13",
-      },
-      {
-        id: "service14",
-        image: "Homeposter1.png",
-        path: "/service14",
-        service: "Service 14",
-      },
-      {
-        id: "service15",
-        image: "Homeposter1.png",
-        path: "/service15",
-        service: "Service 15",
-      },
-      {
-        id: "service16",
-        image: "Homeposter1.png",
-        path: "/service16",
-        service: "Service 16",
-      },
-      {
-        id: "service17",
-        image: "Homeposter1.png",
-        path: "/service17",
-        service: "Service 17",
-      },
-      {
-        id: "service18",
-        image: "Homeposter1.png",
-        path: "/service18",
-        service: "Service 18",
-      },
+      // {
+      //   id: "account",
+      //   image: "Homeposter1.png",
+      //   path: "/account",
+      //   service: "Account",
+      // },
+      // {
+      //   id: "aayush",
+      //   image: "Homeposter1.png",
+      //   path: "/aayush",
+      //   service: "Aayush",
+      // },
+      // {
+      //   id: "privacy",
+      //   image: "Homeposter1.png",
+      //   path: "/privacy",
+      //   service: "Privacy",
+      // },
+      // {
+      //   id: "service7",
+      //   image: "Homeposter1.png",
+      //   path: "/service7",
+      //   service: "Service 7",
+      // },
+      // {
+      //   id: "service8",
+      //   image: "Homeposter1.png",
+      //   path: "/service8",
+      //   service: "Service 8",
+      // },
+      // {
+      //   id: "service9",
+      //   image: "Homeposter1.png",
+      //   path: "/service9",
+      //   service: "Service 9",
+      // },
+      // {
+      //   id: "service10",
+      //   image: "Homeposter1.png",
+      //   path: "/service10",
+      //   service: "Service 10",
+      // },
+      // {
+      //   id: "service11",
+      //   image: "Homeposter1.png",
+      //   path: "/service11",
+      //   service: "Service 11",
+      // },
+      // {
+      //   id: "service12",
+      //   image: "Homeposter1.png",
+      //   path: "/service12",
+      //   service: "Service 12",
+      // },
+      // {
+      //   id: "service13",
+      //   image: "Homeposter1.png",
+      //   path: "/service13",
+      //   service: "Service 13",
+      // },
+      // {
+      //   id: "service14",
+      //   image: "Homeposter1.png",
+      //   path: "/service14",
+      //   service: "Service 14",
+      // },
+      // {
+      //   id: "service15",
+      //   image: "Homeposter1.png",
+      //   path: "/service15",
+      //   service: "Service 15",
+      // },
+      // {
+      //   id: "service16",
+      //   image: "Homeposter1.png",
+      //   path: "/service16",
+      //   service: "Service 16",
+      // },
+      // {
+      //   id: "service17",
+      //   image: "Homeposter1.png",
+      //   path: "/service17",
+      //   service: "Service 17",
+      // },
+      // {
+      //   id: "service18",
+      //   image: "Homeposter1.png",
+      //   path: "/service18",
+      //   service: "Service 18",
+      // },
     ],
     hi: [
-      {
-        id: "upi",
-        image: "Homeposter1.png",
-        path: "/upi",
-        service: "UPI सेवा",
-      },
-      {
-        id: "pan",
-        image: "Homeposter1.png",
-        path: "/pan",
-        service: "पैन कार्ड",
-      },
+      // {
+      //   id: "upi",
+      //   image: "Homeposter1.png",
+      //   path: "/upi",
+      //   service: "UPI सेवा",
+      // },
+      // {
+      //   id: "pan",
+      //   image: "Homeposter1.png",
+      //   path: "/pan",
+      //   service: "पैन कार्ड",
+      // },
       {
         id: "aadhaar",
         image: "Homeposter1.png",
-        path: "/aadhaar",
+        path: "/aadhar",
         service: "आधार",
       },
-      {
-        id: "account",
-        image: "Homeposter1.png",
-        path: "/account",
-        service: "खाता",
-      },
-      {
-        id: "aayush",
-        image: "Homeposter1.png",
-        path: "/aayush",
-        service: "आयुष",
-      },
-      {
-        id: "privacy",
-        image: "Homeposter1.png",
-        path: "/privacy",
-        service: "प्राइवेसी",
-      },
-      {
-        id: "service7",
-        image: "Homeposter1.png",
-        path: "/service7",
-        service: "सर्विस 7",
-      },
-      {
-        id: "service8",
-        image: "Homeposter1.png",
-        path: "/service8",
-        service: "सर्विस 8",
-      },
-      {
-        id: "service9",
-        image: "Homeposter1.png",
-        path: "/service9",
-        service: "सर्विस 9",
-      },
-      {
-        id: "service10",
-        image: "Homeposter1.png",
-        path: "/service10",
-        service: "सर्विस 10",
-      },
-      {
-        id: "service11",
-        image: "Homeposter1.png",
-        path: "/service11",
-        service: "सर्विस 11",
-      },
-      {
-        id: "service12",
-        image: "Homeposter1.png",
-        path: "/service12",
-        service: "सर्विस 12",
-      },
-      {
-        id: "service13",
-        image: "Homeposter1.png",
-        path: "/service13",
-        service: "सर्विस 13",
-      },
-      {
-        id: "service14",
-        image: "Homeposter1.png",
-        path: "/service14",
-        service: "सर्विस 14",
-      },
-      {
-        id: "service15",
-        image: "Homeposter1.png",
-        path: "/service15",
-        service: "सर्विस 15",
-      },
-      {
-        id: "service16",
-        image: "Homeposter1.png",
-        path: "/service16",
-        service: "सर्विस 16",
-      },
-      {
-        id: "service17",
-        image: "Homeposter1.png",
-        path: "/service17",
-        service: "सर्विस 17",
-      },
-      {
-        id: "service18",
-        image: "Homeposter1.png",
-        path: "/service18",
-        service: "सर्विस 18",
-      },
+      // {
+      //   id: "account",
+      //   image: "Homeposter1.png",
+      //   path: "/account",
+      //   service: "खाता",
+      // },
+      // {
+      //   id: "aayush",
+      //   image: "Homeposter1.png",
+      //   path: "/aayush",
+      //   service: "आयुष",
+      // },
+      // {
+      //   id: "privacy",
+      //   image: "Homeposter1.png",
+      //   path: "/privacy",
+      //   service: "प्राइवेसी",
+      // },
+      // {
+      //   id: "service7",
+      //   image: "Homeposter1.png",
+      //   path: "/service7",
+      //   service: "सर्विस 7",
+      // },
+      // {
+      //   id: "service8",
+      //   image: "Homeposter1.png",
+      //   path: "/service8",
+      //   service: "सर्विस 8",
+      // },
+      // {
+      //   id: "service9",
+      //   image: "Homeposter1.png",
+      //   path: "/service9",
+      //   service: "सर्विस 9",
+      // },
+      // {
+      //   id: "service10",
+      //   image: "Homeposter1.png",
+      //   path: "/service10",
+      //   service: "सर्विस 10",
+      // },
+      // {
+      //   id: "service11",
+      //   image: "Homeposter1.png",
+      //   path: "/service11",
+      //   service: "सर्विस 11",
+      // },
+      // {
+      //   id: "service12",
+      //   image: "Homeposter1.png",
+      //   path: "/service12",
+      //   service: "सर्विस 12",
+      // },
+      // {
+      //   id: "service13",
+      //   image: "Homeposter1.png",
+      //   path: "/service13",
+      //   service: "सर्विस 13",
+      // },
+      // {
+      //   id: "service14",
+      //   image: "Homeposter1.png",
+      //   path: "/service14",
+      //   service: "सर्विस 14",
+      // },
+      // {
+      //   id: "service15",
+      //   image: "Homeposter1.png",
+      //   path: "/service15",
+      //   service: "सर्विस 15",
+      // },
+      // {
+      //   id: "service16",
+      //   image: "Homeposter1.png",
+      //   path: "/service16",
+      //   service: "सर्विस 16",
+      // },
+      // {
+      //   id: "service17",
+      //   image: "Homeposter1.png",
+      //   path: "/service17",
+      //   service: "सर्विस 17",
+      // },
+      // {
+      //   id: "service18",
+      //   image: "Homeposter1.png",
+      //   path: "/service18",
+      //   service: "सर्विस 18",
+      // },
     ],
   };
 
@@ -281,12 +281,12 @@ const Cards = () => {
         ))}
       </div>
       <div className=" justify-end flex">
-        <button
+        {/* <button
           className="text-blue-600 font-semibold hover:scale-120 mr-4 "
           onClick={() => setShowMore(!showMore)}
         >
           {showMore ? "Less>>" : "More>>"}
-        </button>
+        </button> */}
       </div>
     </div>
   );

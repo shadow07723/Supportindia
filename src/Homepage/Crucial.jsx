@@ -5,7 +5,7 @@ const images = [
   {
     src: "1000046237-removebg-preview.png",
     link: "/page1",
-    className: "md:h-84 h-50 w-full rounded-2xl object-cover",
+    className: "md:h-84 h-50 w-full rounded-2xl ",
   },
   {
     src: "Homeposter1.png",
@@ -69,7 +69,7 @@ function Carousel() {
   };
 
   return (
-    <div className="pt-3 overflow-hidden relative w-[90vw] mx-auto rounded-2xl">
+    <div className=" overflow-hidden relative w-[90vw] mx-auto rounded-2xl">
       {/* Slide container */}
       <div
         className={`flex ${isTransitioning ? "transition-transform duration-[2000ms] ease-in-out" : ""}`}
@@ -88,7 +88,7 @@ function Carousel() {
       </div>
 
       {/* Dots with progress animation */}
-      <div className="flex justify-center space-x-2 mt-4">
+      <div className="flex justify-center space-x-2 mt-1">
         {images.map((_, idx) => (
           <div
             key={idx}

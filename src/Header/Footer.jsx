@@ -66,7 +66,7 @@ const Footer = () => {
                 {t.aadhaar}
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/pan" state={{ service: "pan" }}>
                 {t.pan}
               </Link>
@@ -75,7 +75,7 @@ const Footer = () => {
               <Link to="/upi" state={{ service: "upi" }}>
                 {t.upi}
               </Link>
-            </li>
+            </li> */}
             {/* <li>
               <Link to="/blog" state={{ service: "blog" }}>
                 {t.blog}
